@@ -146,13 +146,13 @@ SELECT c.name AS channel_name, cp.start_time, cp.end_time, s.season_number, e.ep
 4. ドラマというチャンネルがあったとして、ドラマのチャンネルの番組表を表示するために、本日から一週間分、何日の何時から何の番組が放送されるのかを知りたいです。ドラマのチャンネルに対して、放送開始時刻、放送終了時刻、シーズン数、エピソード数、エピソードタイトル、エピソード詳細を本日から一週間分取得してください
 ```SQL
 SELECT c.name AS channel_name, cp.start_time, cp.end_time, s.season_number, e.episode_number, e.title AS episode_title, e.description AS episode_description
-FROM channel_programs cp
-JOIN channels c ON cp.channel_id = c.id
-JOIN episodes e ON cp.episode_id = e.id
-LEFT JOIN seasons s ON e.season_id = s.id
-WHERE c.name = 'ワンデイドラマ' 
-AND cp.start_time BETWEEN "2024-08-01 08:00:00" AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
-ORDER BY cp.start_time;
+  FROM channel_programs cp
+  JOIN channels c ON cp.channel_id = c.id
+  JOIN episodes e ON cp.episode_id = e.id
+  JOIN seasons s ON e.season_id = s.id
+ WHERE c.name = 'ワンデイドラマ' 
+   AND cp.start_time BETWEEN "2024-08-01 08:00:00" AND DATE_ADD(CURDATE(), INTERVAL 7 DAY)
+ ORDER BY cp.start_time;
 ```
 <br>
 
