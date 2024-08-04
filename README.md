@@ -4,7 +4,6 @@
 
 ## STEP1：テーブル定義
 
-
 ### channel_programs
 　channnelsテーブルとprogramsテーブルから外部キー制約を受けて、放送スケジュールを登録するテーブル。　
 
@@ -21,6 +20,8 @@
 - channel_programs.channel_id -> channels.id
 - channel_programs.episode_id -> episodes.id
 
+<br>
+
 ### channels
 　チャンネル名を管理するテーブル。
 
@@ -29,6 +30,7 @@
 | id    | int          | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(100) | NO   |     | NULL    |                |
 
+<br>
 
 ### episodes
 　作品の詳細情報が確認できるテーブル。単発映画、連続エピソードの両方を管理している。
@@ -49,6 +51,8 @@ seasonsテーブルから外部キー制約を受けている。
 **外部キー制約**<br>
 - episodes.season_id -> seasons.id
 
+<br>
+
 ### genres
 　アニメ、ドラマ、映画、ニュースのジャンルを登録したテーブル。
 チャンネルテーブル、エピソードテーブル両方の外部キーとなっている。
@@ -58,6 +62,7 @@ seasonsテーブルから外部キー制約を受けている。
 | id    | int          | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(100) | NO   |     | NULL    |                |
 
+<br>
 
 ### seasons
 シーズン番号を管理するテーブル。programsテーブルから外部キー制約を受けている。
@@ -68,9 +73,10 @@ seasonsテーブルから外部キー制約を受けている。
 | program_id    | int  | NO   | MUL | NULL    |                |
 | season_number | int  | YES  |     | NULL    |                |
 
-#**外部キー制約**<br>
+**外部キー制約**<br>
 - seasons.program_id -> programs.id
 
+<br>
 
 ### program_genres
 programsテーブルとgenreテーブルの中間テーブルとなっている。
@@ -81,9 +87,11 @@ programsテーブルとgenreテーブルの中間テーブルとなっている�
 | program_id | int  | NO   | MUL | NULL    |                |
 | genre_id   | int  | NO   | MUL | NULL    |                |
 
-外部キー制約:
-    program_genres.program_id -> programs.id
-    programs.genre_id -> genres.id
+**外部キー制約**<br>
+- program_genres.program_id -> programs.id
+- programs.genre_id -> genres.id
+
+<br>
 
 ### programs
 作品のメインタイトルを管理するテーブル。
@@ -93,6 +101,7 @@ programsテーブルとgenreテーブルの中間テーブルとなっている�
 | id    | int          | NO   | PRI | NULL    | auto_increment |
 | title | varchar(255) | NO   |     | NULL    |                |
 
+<br>
 
 
 ## STEP2：データの入力
