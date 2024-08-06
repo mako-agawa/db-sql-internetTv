@@ -9,7 +9,7 @@
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id         | int      | NO   | PRI | NULL    | auto_increment |
+| id         | int      | NO   | PRI | NULL    | YES |
 | channel_id | int      | NO   | MUL | NULL    |                |
 | episode_id | int      | NO   | MUL | NULL    |                |
 | start_time | datetime | NO   |     | NULL    |                |
@@ -27,7 +27,7 @@
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id    | int          | NO   | PRI | NULL    | auto_increment |
+| id    | int          | NO   | PRI | NULL    | YES |
 | name  | varchar(100) | NO   |     | NULL    |                |
 
 <br>
@@ -38,7 +38,7 @@ seasonsテーブルから外部キー制約を受けている。
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id             | int          | NO   | PRI | NULL    | auto_increment |
+| id             | int          | NO   | PRI | NULL    | YES |
 | season_id      | int          | YES  | MUL | NULL    |                |
 | episode_number | int          | YES  |     | NULL    |                |
 | title          | varchar(255) | NO   |     | NULL    |                |
@@ -59,7 +59,7 @@ seasonsテーブルから外部キー制約を受けている。
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id    | int          | NO   | PRI | NULL    | auto_increment |
+| id    | int          | NO   | PRI | NULL    | YES |
 | name  | varchar(100) | NO   |     | NULL    |                |
 
 <br>
@@ -69,7 +69,7 @@ seasonsテーブルから外部キー制約を受けている。
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id            | int  | NO   | PRI | NULL    | auto_increment |
+| id            | int  | NO   | PRI | NULL    | YES |
 | program_id    | int  | NO   | MUL | NULL    |                |
 | season_number | int  | YES  |     | NULL    |                |
 
@@ -83,7 +83,7 @@ programsテーブルとgenreテーブルの中間テーブルとなっている�
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id         | int  | NO   | PRI | NULL    | auto_increment |
+| id         | int  | NO   | PRI | NULL    | YES |
 | program_id | int  | NO   | MUL | NULL    |                |
 | genre_id   | int  | NO   | MUL | NULL    |                |
 
@@ -98,7 +98,7 @@ programsテーブルとgenreテーブルの中間テーブルとなっている�
 
 | カムラ名  | データ型   | Null | Key | 初期値 | AI |
 |:---------|:---------|:-----:|:-----:|:----|:----:|
-| id    | int          | NO   | PRI | NULL    | auto_increment |
+| id    | int          | NO   | PRI | NULL    | YES |
 | title | varchar(255) | NO   |     | NULL    |                |
 
 <br>
